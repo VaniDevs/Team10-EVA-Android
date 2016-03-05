@@ -1,5 +1,6 @@
 package com.vanhacks.vandroid;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,7 +17,7 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements OnFragmentChangeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,5 +86,13 @@ public class HomeActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void launchFragment(Fragment fragment) {
+        getFragmentManager()
+                .beginTransaction()
+                .replace(android.R.id.content, fragment)
+                .commit();
     }
 }

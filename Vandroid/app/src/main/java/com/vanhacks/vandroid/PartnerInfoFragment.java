@@ -1,41 +1,33 @@
 package com.vanhacks.vandroid;
 
 import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.app.Fragment;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link PersonalInfoFragment.OnFragmentInteractionListener} interface
+ * {@link PartnerInfoFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PersonalInfoFragment#newInstance} factory method to
+ * Use the {@link PartnerInfoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PersonalInfoFragment extends Fragment {
+public class PartnerInfoFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    private OnFragmentChangeListener mOnFragmentChangeListener;
 
-    public PersonalInfoFragment() {
+    public PartnerInfoFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PersonalInfoFragment newInstance() {
-        PersonalInfoFragment fragment = new PersonalInfoFragment();
+    public static PartnerInfoFragment newInstance() {
+        PartnerInfoFragment fragment = new PartnerInfoFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
@@ -44,22 +36,6 @@ public class PersonalInfoFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mOnFragmentChangeListener = (OnFragmentChangeListener) activity;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        FloatingActionButton floatingActionButton = (FloatingActionButton) getActivity().findViewById(R.id.next_btn);
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-                mOnFragmentChangeListener.launchFragment(PartnerInfoFragment.newInstance());
-            }
-        });
     }
 
     @Override
@@ -73,9 +49,7 @@ public class PersonalInfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_partner_info, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

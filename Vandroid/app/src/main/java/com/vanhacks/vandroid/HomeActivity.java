@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.Parse;
+import com.parse.ParseObject;
+
 public class HomeActivity extends AppCompatActivity {
 
     @Override
@@ -26,6 +29,18 @@ public class HomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+
+        Parse.initialize(new Parse.Configuration.Builder(this)
+                        .applicationId("Vanhacks")
+                        .clientKey("Android")
+                        .server("http://66.175.210.39:1337/parse")
+                        .build()
+        );
+
     }
 
     @Override

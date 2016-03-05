@@ -5,12 +5,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.Parse;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.SignUpCallback;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -25,18 +29,32 @@ public class HomeActivity extends AppCompatActivity {
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+//                ParseUser user = new ParseUser();
+//                user.setUsername("my name");
+//                user.setPassword("my pass");
+//                user.setEmail("email@example.com");
+
+// other fields can be set just like with ParseObject
+//                Log.d("test","test");
+//                user.signUpInBackground(new SignUpCallback() {
+//                    public void done(ParseException e) {
+//                        if (e == null) {
+//                            Log.d("work","itworks?");
+//                        } else {
+//                            Log.d("sad",e.getMessage());
+//                            // Sign up didn't succeed. Look at the ParseException
+//                            // to figure out what went wrong
+//                        }
+//                    }
+//                });
 //            }
 //        });
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
+        Parse.enableLocalDatastore(this);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                         .applicationId("Vanhacks")
-                        .clientKey("Android")
+                        .clientKey("spiderman")
                         .server("http://66.175.210.39:1337/parse")
                         .build()
         );

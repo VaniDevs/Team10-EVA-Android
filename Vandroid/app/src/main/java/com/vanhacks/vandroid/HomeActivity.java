@@ -54,9 +54,9 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         Parse.enableLocalDatastore(this);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
-                        .applicationId("Vanhacks")
+                        .applicationId("VanHacks")
                         .clientKey("spiderman")
-                        .server("http://66.175.210.39:1337/parse")
+                        .server("http://66.175.210.39:1337/parse/")
                         .build()
         );
 

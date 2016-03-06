@@ -70,6 +70,7 @@ public class PartnerInfoFragment extends Fragment {
                 bundle.putAll(mPersonalInfoBundle);
 
                 // TODO: bundle has errthang
+                
 
                 // TODO: don't launch new fragment; go to a main landing fragment, send bundle to service
                 // TODO: send shit off here ; then we'll probably want to launch the real app fragment

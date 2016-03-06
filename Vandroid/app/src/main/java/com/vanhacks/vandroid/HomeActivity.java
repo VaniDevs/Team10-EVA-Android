@@ -57,8 +57,8 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.notif_icon_test)
-                        .setContentTitle("My notification")
-                        .setContentText("Hello World!");
+                        .setContentTitle("Android Local Update is Available")
+                        .setContentText("Replace Current Version");
         int mId = 001;
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);

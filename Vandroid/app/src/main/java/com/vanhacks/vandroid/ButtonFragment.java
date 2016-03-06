@@ -1,10 +1,10 @@
 package com.vanhacks.vandroid;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,11 +20,18 @@ import com.parse.SaveCallback;
 
 
 public class ButtonFragment extends Fragment {
+
     private ImageButton mMainButton;
 
 
     public ButtonFragment() {
         // Required empty public constructor
+    }
+    public static ButtonFragment newInstance() {
+        ButtonFragment fragment = new ButtonFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -33,7 +40,6 @@ public class ButtonFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_button, container, false);
 
-        //Find the +1 button
         mMainButton = (ImageButton) view.findViewById(R.id.main_button);
 
         mMainButton.setOnClickListener(new View.OnClickListener() {

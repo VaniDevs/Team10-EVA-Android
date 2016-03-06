@@ -30,34 +30,6 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container);
-//        setContentView(R.layout.activity_home);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ParseUser user = new ParseUser();
-//                user.setUsername("my name");
-//                user.setPassword("my pass");
-//                user.setEmail("email@example.com");
-
-// other fields can be set just like with ParseObject
-//                Log.d("test","test");
-//                user.signUpInBackground(new SignUpCallback() {
-//                    public void done(ParseException e) {
-//                        if (e == null) {
-//                            Log.d("work","itworks?");
-//                        } else {
-//                            Log.d("sad",e.getMessage());
-//                            // Sign up didn't succeed. Look at the ParseException
-//                            // to figure out what went wrong
-//                        }
-//                    }
-//                });
-//            }
-//        });
 
         // start of notif stuff
         NotificationCompat.Builder mBuilder =
@@ -86,21 +58,49 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         not.flags = Notification.FLAG_ONGOING_EVENT;
         mNotificationManager.notify(mId, not);
         // end of notif stuff
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+//        Log.d("test","est");
+//        ParseUser user = new ParseUser();
+//        user.setUsername("test");
+//        user.setPassword("1234");
+//        user.setEmail("email@example.com");
+//        // other fields can be set just like with ParseObject
+//        user.put("phone", "650-253-0000");
+//        user.signUpInBackground(new SignUpCallback() {
+//            public void done(ParseException e) {
+//                if (e == null) {
+//                    // Hooray! Let them use the app now.
+//                    Log.d("parse", "things worked!");
+//                } else {
+//                    // Sign up didn't succeed. Look at the ParseException
+//                    // to figure out what went wrong
+//                    Log.d("parse", e.getMessage(), e);
+//                }
+//            }
+//        });
+//        try {
+//            user.pin();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
 
-//        Parse.enableLocalDatastore(this);
-//
-//        Parse.initialize(new Parse.Configuration.Builder(this)
-//                        .applicationId("VanHacks")
-//                        .clientKey("spiderman")
-//                        .server("http://66.175.210.39:1337/parse/")
-//                        .build()
-//        );
+        ParseUser currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, ButtonFragment.newInstance())
+                    .commit();
+        } else {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, PersonalInfoFragment.newInstance())
+                    .commit();
+        }
 
-        getFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, PersonalInfoFragment.newInstance())
-                .commit();
     }
 
     @Override

@@ -29,6 +29,8 @@ import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity implements OnFragmentChangeListener {
 
+    public static final String EMAIL = "email";
+    public static final String PASSWORD = "password";
     public static final String FIRST_NAME = "firstName";
     public static final String LAST_NAME = "lastName";
     public static final String BIRTH_DATE = "birthDate";
@@ -50,6 +52,8 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
     public static final String PARTNER_WORK_PHONE = "workPhonePartner";
     public static final String PARTNER_LICENSE_PLATE = "licensePlatePartner";
 
+    private ParseUser mNewUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,8 +68,8 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.notif_icon_test)
-                        .setContentTitle("My notification")
-                        .setContentText("Hello World!");
+                        .setContentTitle("Android Local Update is Available")
+                        .setContentText("Replace Current Version");
         int mId = 001;
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
@@ -102,7 +106,7 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         } else {
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, PersonalInfoFragment.newInstance())
+                    .replace(R.id.fragment_container, SignUpFragment.newInstance())
                     .commit();
         }
 
@@ -115,5 +119,20 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
                 .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
                 .replace(R.id.fragment_container, fragment)
                 .commit();
+    }
+
+    @Override
+    public void putToNewUser(String key, String value) {
+        mNewUser.put(key, value);
+    }
+
+    @Override
+    public void setNewUser(ParseUser user) {
+        mNewUser = user;
+    }
+
+    @Override
+    public ParseUser getNewUser() {
+        return mNewUser;
     }
 }

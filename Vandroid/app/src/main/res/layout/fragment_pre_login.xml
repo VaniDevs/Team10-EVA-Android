@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingStart="15dp"
+    android:paddingRight="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="20dp"
+    android:gravity="center"
+    tools:context="com.vanhacks.vandroid.PreLogin">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:text="@string/hello_blank_fragment" />-->
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Sign Up"/>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Log In"/>
+
+</LinearLayout>

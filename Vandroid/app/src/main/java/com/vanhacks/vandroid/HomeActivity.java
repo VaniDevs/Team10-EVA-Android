@@ -99,15 +99,16 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         super.onResume();
 
         ParseUser currentUser = ParseUser.getCurrentUser();
-        if (currentUser != null) {
+        if (currentUser != null) {// user is already logged in
             getFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragment_container, ButtonFragment.newInstance())
                     .commit();
-        } else {
+        } else { // user has not logged in yet
             getFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, SignUpFragment.newInstance())
+//                    .replace(R.id.fragment_container, SignUpFragment.newInstance())
+                    .replace(R.id.fragment_container, PreLogin.newInstance())
                     .commit();
         }
 

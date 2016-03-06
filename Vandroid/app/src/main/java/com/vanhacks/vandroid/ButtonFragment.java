@@ -212,8 +212,6 @@ public class ButtonFragment extends Fragment implements GoogleApiClient.Connecti
         }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
                 mGoogleApiClient);
-
-
     }
 
     @Override

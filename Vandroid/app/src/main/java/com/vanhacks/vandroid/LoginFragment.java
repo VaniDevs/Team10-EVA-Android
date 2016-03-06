@@ -16,16 +16,16 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
-public class SignUpFragment extends android.app.Fragment {
+public class LoginFragment extends android.app.Fragment {
 
     OnFragmentChangeListener mOnFragmentChangeListener;
 
-    public SignUpFragment() {
+    public LoginFragment() {
         // Required empty public constructor
     }
 
-    public static SignUpFragment newInstance() {
-        SignUpFragment fragment = new SignUpFragment();
+    public static LoginFragment newInstance() {
+        LoginFragment fragment = new LoginFragment();
         return fragment;
     }
 
@@ -49,16 +49,13 @@ public class SignUpFragment extends android.app.Fragment {
                 EditText email = (EditText) v.findViewById(R.id.email);
                 EditText password = (EditText) v.findViewById(R.id.password);
 
-                ParseUser user = new ParseUser();
-                user.setUsername(email.getText().toString());
-                user.setPassword(password.getText().toString());
-                mOnFragmentChangeListener.setNewUser(user);
+                ParseUser.logInInBackground(email.getText().toString(), password.getText().toString());
 
                 Bundle bundle = new Bundle();
                 bundle.putString(HomeActivity.EMAIL, email.getText().toString());
                 bundle.putString(HomeActivity.PASSWORD, password.getText().toString());
 
-                mOnFragmentChangeListener.launchFragment(PersonalInfoFragment.newInstance(bundle));
+                mOnFragmentChangeListener.launchFragment(ButtonFragment.newInstance());
             }
         });
     }
@@ -72,7 +69,7 @@ public class SignUpFragment extends android.app.Fragment {
         password.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus){
+                if (!hasFocus) {
                     hideKeyboard(v);
                 }
             }

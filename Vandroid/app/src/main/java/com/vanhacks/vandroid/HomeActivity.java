@@ -26,6 +26,27 @@ import com.parse.SignUpCallback;
 
 public class HomeActivity extends AppCompatActivity implements OnFragmentChangeListener {
 
+    public static final String FIRST_NAME = "firstName";
+    public static final String LAST_NAME = "lastName";
+    public static final String BIRTH_DATE = "birthDate";
+    public static final String HEIGHT = "height";
+    public static final String WEIGHT = "weight";
+    public static final String MOBILE_PHONE = "mobilePhone";
+    public static final String HOME_ADDRESS = "homeAddress";
+    public static final String WORK_ADDRESS = "workAddress";
+    public static final String WORK_PHONE = "workPhone";
+    public static final String LICENSE_PLATE = "licensePlate";
+    public static final String PARTNER_FIRST_NAME = "firstNamePartner";
+    public static final String PARTNER_LAST_NAME = "lastNamePartner";
+    public static final String PARTNER_BIRTH_DATE = "birthDatePartner";
+    public static final String PARTNER_HEIGHT = "heightPartner";
+    public static final String PARTNER_WEIGHT = "weightPartner";
+    public static final String PARTNER_MOBILE_PHONE = "mobilePhonePartner";
+    public static final String PARTNER_HOME_ADDRESS = "homeAddressPartner";
+    public static final String PARTNER_WORK_ADDRESS = "workAddressPartner";
+    public static final String PARTNER_WORK_PHONE = "workPhonePartner";
+    public static final String PARTNER_LICENSE_PLATE = "licensePlatePartner";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

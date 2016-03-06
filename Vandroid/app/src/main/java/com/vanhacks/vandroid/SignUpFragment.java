@@ -50,7 +50,8 @@ public class SignUpFragment extends android.app.Fragment {
                 EditText password = (EditText) v.findViewById(R.id.password);
 
                 ParseUser user = new ParseUser();
-                user.setUsername(email.getText().toString());
+                user.setUsername(email.getText().toString().trim());
+                user.setEmail(email.getText().toString().trim());
                 user.setPassword(password.getText().toString());
                 mOnFragmentChangeListener.setNewUser(user);
 

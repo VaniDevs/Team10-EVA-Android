@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
+import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -49,20 +50,54 @@ public class LoginFragment extends android.app.Fragment {
                 EditText email = (EditText) v.findViewById(R.id.email);
                 EditText password = (EditText) v.findViewById(R.id.password);
 
-                ParseUser.logInInBackground(email.getText().toString(), password.getText().toString());
+                ParseUser.logInInBackground(email.getText().toString().trim(), password.getText().toString(), new
+//                ParseUser.logInInBackground("rr@rr.ca", "rr", new
+                        LogInCallback() {
+                            public void done(ParseUser user, ParseException e) {
+                                if (user != null) {
+                                    try {
+                                        user.pin();
+                                    } catch (ParseException e1) {
+                                        e1.printStackTrace();
+                                    }
+                                    mOnFragmentChangeListener.launchFragment(ButtonFragment.newInstance());
+                                } else {
+                                    mOnFragmentChangeListener.showLoginFailed();
+                                    floatingActionButton.setVisibility(View.VISIBLE);
+                                }
+                            }
+                        });
+//                try {
+//                    ParseUser user = ParseUser.logIn(email.getText().toString(), password.getText().toString());
+//                    if (user != null) {
+//                        try {
+//                            user.pin();
+//                        } catch (ParseException e1) {
+//                            e1.printStackTrace();
+//                        }
+//                        mOnFragmentChangeListener.launchFragment(ButtonFragment.newInstance());
+//                    } else {
+//                        mOnFragmentChangeListener.showLoginFailed();
+//                        floatingActionButton.setVisibility(View.VISIBLE);
+//                    }
+//                } catch (ParseException e) {
+//                    e.printStackTrace();
+//                }
+
+
 
                 Bundle bundle = new Bundle();
                 bundle.putString(HomeActivity.EMAIL, email.getText().toString());
                 bundle.putString(HomeActivity.PASSWORD, password.getText().toString());
 
-                mOnFragmentChangeListener.launchFragment(ButtonFragment.newInstance());
+
             }
         });
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_sign_up, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
 
         EditText password = (EditText) view.findViewById(R.id.password);
 

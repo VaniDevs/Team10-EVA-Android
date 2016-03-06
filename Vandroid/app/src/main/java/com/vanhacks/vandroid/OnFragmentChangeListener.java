@@ -11,4 +11,5 @@ public interface OnFragmentChangeListener {
     ParseUser getNewUser();
     void showAlertSentMessage();
     void showOkaySentMessage();
+    void showLoginFailed();
 }

@@ -91,7 +91,6 @@ public class PersonalInfoFragment extends Fragment {
 //                }
 
                 ParseUser user = mOnFragmentChangeListener.getNewUser();
-                user.setUsername(firstName.getText().toString() + " " + lastName.getText().toString());
                 mOnFragmentChangeListener.putToNewUser(HomeActivity.FIRST_NAME, firstName.getText().toString());
                 mOnFragmentChangeListener.putToNewUser(HomeActivity.LAST_NAME, lastName.getText().toString());
                 mOnFragmentChangeListener.putToNewUser(HomeActivity.BIRTH_DATE, birthDate.getText().toString());

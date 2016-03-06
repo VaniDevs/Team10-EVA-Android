@@ -147,4 +147,9 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
     public void showOkaySentMessage() {
         Toast.makeText(HomeActivity.this, "We're glad to hear you're okay", Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void showLoginFailed() {
+        Toast.makeText(HomeActivity.this, "Login failed: incorrect password or username", Toast.LENGTH_SHORT).show();
+    }
 }

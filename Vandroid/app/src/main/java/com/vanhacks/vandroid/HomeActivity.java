@@ -3,6 +3,7 @@ package com.vanhacks.vandroid;
 import android.app.Fragment;
 import android.app.Notification;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.app.FragmentTransaction;
@@ -28,6 +29,34 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container);
+//        setContentView(R.layout.activity_home);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
+
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                ParseUser user = new ParseUser();
+//                user.setUsername("my name");
+//                user.setPassword("my pass");
+//                user.setEmail("email@example.com");
+
+// other fields can be set just like with ParseObject
+//                Log.d("test","test");
+//                user.signUpInBackground(new SignUpCallback() {
+//                    public void done(ParseException e) {
+//                        if (e == null) {
+//                            Log.d("work","itworks?");
+//                        } else {
+//                            Log.d("sad",e.getMessage());
+//                            // Sign up didn't succeed. Look at the ParseException
+//                            // to figure out what went wrong
+//                        }
+//                    }
+//                });
+//            }
+//        });
 
         // start of notif stuff
         NotificationCompat.Builder mBuilder =
@@ -38,7 +67,20 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         int mId = 001;
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        // mId allows you to update the notification later on.
+
+//        set the intent stuff
+        Intent resultIntent = new Intent(this, HomeActivity.class);
+        // Because clicking the notification opens a new ("special") activity, there's
+        // no need to create an artificial back stack.
+        PendingIntent resultPendingIntent =
+                PendingIntent.getActivity(
+                        this,
+                        0,
+                        resultIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+        mBuilder.setContentIntent(resultPendingIntent);
+
         Notification not = mBuilder.build();
         not.flags = Notification.FLAG_ONGOING_EVENT;
         mNotificationManager.notify(mId, not);

@@ -18,11 +18,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toolbar;
 
-import com.parse.Parse;
 import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseUser;
-import com.parse.SignUpCallback;
+import com.parse.ParseCloud;
+import com.parse.FunctionCallback;
+
+import java.util.HashMap;
 
 public class HomeActivity extends AppCompatActivity implements OnFragmentChangeListener {
 
@@ -51,34 +51,35 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container);
-//        setContentView(R.layout.activity_home);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ParseUser user = new ParseUser();
-//                user.setUsername("my name");
-//                user.setPassword("my pass");
-//                user.setEmail("email@example.com");
-
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                HashMap<String, String> params = new HashMap<String, String>();
+                params.put("firstName", "Daniel");
+                params.put("lastName", "Daniel");
+                params.put("phone", "1234");
+                params.put("email", "danieltsang94@gmail.com");
+                params.put("username", "danieltsang94@gmail.com");
+                params.put("password", "lolok");
 // other fields can be set just like with ParseObject
-//                Log.d("test","test");
-//                user.signUpInBackground(new SignUpCallback() {
-//                    public void done(ParseException e) {
-//                        if (e == null) {
-//                            Log.d("work","itworks?");
-//                        } else {
-//                            Log.d("sad",e.getMessage());
-//                            // Sign up didn't succeed. Look at the ParseException
-//                            // to figure out what went wrong
-//                        }
-//                    }
-//                });
-//            }
-//        });
+                Log.d("test", "test");
+                ParseCloud.callFunctionInBackground("submitForm", params, new FunctionCallback<String>() {
+                    public void done(String s, ParseException e) {
+                        if (e == null) {
+                            Log.d("work", "itworks?");
+                        } else {
+                            Log.d("sad", e.getMessage());
+                            // Sign up didn't succeed. Look at the ParseException
+                            // to figure out what went wrong
+                        }
+                    }
+                });
+            }
+        });
 
         // start of notif stuff
         NotificationCompat.Builder mBuilder =

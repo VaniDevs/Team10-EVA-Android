@@ -53,33 +53,6 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_container);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                HashMap<String, String> params = new HashMap<String, String>();
-                params.put("firstName", "Daniel");
-                params.put("lastName", "Daniel");
-                params.put("phone", "1234");
-                params.put("email", "danieltsang94@gmail.com");
-                params.put("username", "danieltsang94@gmail.com");
-                params.put("password", "lolok");
-// other fields can be set just like with ParseObject
-                Log.d("test", "test");
-                ParseCloud.callFunctionInBackground("submitForm", params, new FunctionCallback<String>() {
-                    public void done(String s, ParseException e) {
-                        if (e == null) {
-                            Log.d("work", "itworks?");
-                        } else {
-                            Log.d("sad", e.getMessage());
-                            // Sign up didn't succeed. Look at the ParseException
-                            // to figure out what went wrong
-                        }
-                    }
-                });
-            }
-        });
-
         // start of notif stuff
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)

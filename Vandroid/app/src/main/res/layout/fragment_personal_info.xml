@@ -1,14 +1,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="15dp"
-    android:paddingStart="15dp"
-    android:paddingRight="15dp"
-    android:paddingEnd="15dp"
-    android:paddingTop="20dp"
-    tools:context=".PersonalInfoFragment">
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingEnd="15dp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:paddingStart="15dp"
+              android:paddingTop="20dp"
+              tools:context=".PersonalInfoFragment">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,254 +19,281 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="15dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="first name"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/first_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="first name"
             android:background="@null"
-            android:textSize="15sp"
+            android:hint="first name"
+            android:imeOptions="actionNext"
+            android:inputType="text"
             android:maxLength="30"
             android:singleLine="true"
-            android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:textSize="15sp"/>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="last name"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/last_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="last name"
             android:background="@null"
-            android:textSize="15sp"
+            android:hint="last name"
+            android:imeOptions="actionNext"
+            android:inputType="text"
             android:maxLength="30"
             android:singleLine="true"
-            android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="15dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
+            android:text="email"
+            android:textColor="#000000"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="email"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:maxLength="30"
+            android:singleLine="true"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="date of birth"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/birthday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="yyyy/mm/dd"
             android:background="@null"
-            android:textSize="15sp"
+            android:hint="yyyy/mm/dd"
+            android:imeOptions="actionNext"
+            android:inputType="text"
             android:maxLength="10"
             android:singleLine="true"
-            android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="height"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/height"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="ft'in"
             android:background="@null"
-            android:maxLength="4"
-            android:textSize="15sp"
+            android:hint="ft'in"
             android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:maxLength="4"
+            android:textSize="15sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="weight"
-            android:textColor="#000000"
             android:paddingLeft="15dp"
+            android:paddingRight="10dp"
             android:paddingStart="15dp"
-            android:paddingRight="10dp"/>
+            android:text="weight"
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="lbs."
-            android:maxLength="3"
             android:background="@null"
-            android:textSize="15sp"
+            android:hint="lbs."
             android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:maxLength="3"
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="mobile phone"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/mobile_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="mobile phone"
             android:background="@null"
-            android:inputType="phone"
             android:digits="0123456789+"
+            android:hint="mobile phone"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
             android:maxLength="15"
-            android:textSize="15sp"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="home address"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/home_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="home address"
             android:background="@null"
-            android:textSize="15sp"
-            android:maxLines="3"
+            android:hint="home address"
             android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:maxLines="3"
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="work address"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/work_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="work address"
             android:background="@null"
-            android:textSize="15sp"
-            android:maxLines="3"
+            android:hint="work address"
             android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:inputType="text"
+            android:maxLines="3"
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="work phone"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/work_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="work phone"
             android:background="@null"
-            android:inputType="phone"
             android:digits="0123456789+"
-            android:textSize="15sp"
+            android:hint="work phone"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
             android:maxLength="15"
             android:singleLine="true"
-            android:imeOptions="actionNext"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingRight="10dp"
             android:text="license plate #"
-            android:textColor="#000000"
-            android:paddingRight="10dp"/>
+            android:textColor="#000000"/>
 
         <EditText
             android:id="@+id/license_plate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="license plate #"
             android:background="@null"
-            android:textSize="15sp"
+            android:hint="license plate #"
+            android:imeOptions="actionNext"
+            android:inputType="text"
             android:maxLength="10"
             android:singleLine="true"
-            android:imeOptions="actionNext"
-            android:inputType="text"/>
+            android:textSize="15sp"/>
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
@@ -275,6 +302,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        android:src="@drawable/ic_next" />
+        android:src="@drawable/ic_next"/>
 
 </LinearLayout>

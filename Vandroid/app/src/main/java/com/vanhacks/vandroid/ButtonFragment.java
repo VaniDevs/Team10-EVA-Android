@@ -22,7 +22,7 @@ import com.parse.SaveCallback;
 public class ButtonFragment extends Fragment {
 
     private ImageButton mMainButton;
-
+    private ImageButton mGoodButton;
 
     public ButtonFragment() {
         // Required empty public constructor
@@ -41,12 +41,20 @@ public class ButtonFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_button, container, false);
 
         mMainButton = (ImageButton) view.findViewById(R.id.main_button);
+        mGoodButton = (ImageButton) view.findViewById(R.id.good_button);
+        mGoodButton.setVisibility(View.GONE);
 
         mMainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 OnMainButtonClick();
 
+            }
+        });
+        mGoodButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //
             }
         });
 
@@ -78,6 +86,7 @@ public class ButtonFragment extends Fragment {
         } catch (Exception e) {
 
         }
+        mGoodButton.setVisibility(View.VISIBLE);
     }
 
     @Override

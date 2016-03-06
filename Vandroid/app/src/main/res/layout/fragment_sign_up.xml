@@ -8,7 +8,7 @@
     android:paddingRight="15dp"
     android:paddingStart="15dp"
     android:paddingTop="20dp"
-    tools:context=".SignUpFragmentt">
+    tools:context=".SignUpFragment">
 
     <TextView
         android:layout_width="wrap_content"

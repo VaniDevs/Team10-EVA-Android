@@ -1,6 +1,7 @@
 package com.vanhacks.vandroid;
 
 import android.app.Fragment;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
@@ -66,7 +67,9 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         NotificationManager mNotificationManager =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         // mId allows you to update the notification later on.
-        mNotificationManager.notify(mId, mBuilder.build());
+        Notification not = mBuilder.build();
+        not.flags = Notification.FLAG_ONGOING_EVENT;
+        mNotificationManager.notify(mId, not);
         // end of notif stuff
 
         Parse.enableLocalDatastore(this);

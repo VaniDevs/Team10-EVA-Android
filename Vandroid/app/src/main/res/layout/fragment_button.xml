@@ -1,7 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
              xmlns:tools="http://schemas.android.com/tools"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:paddingTop="150dp"
              tools:context=".ButtonFragment">
 
 
@@ -11,7 +13,7 @@
         android:src="@drawable/ic_error_24dp"
         android:scaleType="fitCenter"
         android:background="@android:color/transparent"
-        android:layout_gravity="center"
+        android:layout_gravity="center|center_vertical"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/main_button"/>
@@ -22,7 +24,7 @@
         android:src="@drawable/ic_thumb_up_black_24px"
         android:scaleType="fitCenter"
         android:background="@android:color/transparent"
-        android:layout_gravity="center"
+        android:layout_gravity="center|center_vertical"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/good_button"/>
@@ -34,9 +36,8 @@
         android:text="Update account info"
         android:textAllCaps="false"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_below="@+id/main_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="48dp"/>
 
 
-</RelativeLayout>
+</LinearLayout>

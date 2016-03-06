@@ -109,7 +109,7 @@ public class PartnerInfoFragment extends Fragment {
 
                 // TODO: don't launch new fragment; go to a main landing fragment, send bundle to service
                 // TODO: send shit off here ; then we'll probably want to launch the real app fragment
-//                mOnFragmentChangeListener.launchFragment(PartnerInfoFragment.newInstance(null));
+                mOnFragmentChangeListener.launchFragment(ButtonFragment.newInstance());
             }
         });
     }

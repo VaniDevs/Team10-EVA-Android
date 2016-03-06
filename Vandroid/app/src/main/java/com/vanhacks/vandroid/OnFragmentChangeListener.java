@@ -9,4 +9,6 @@ public interface OnFragmentChangeListener {
     void putToNewUser(String key, String value);
     void setNewUser(ParseUser user);
     ParseUser getNewUser();
+    void showAlertSentMessage();
+    void showOkaySentMessage();
 }

@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toolbar;
 
 import com.parse.Parse;
 import com.parse.ParseException;
@@ -106,8 +107,8 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
     public void launchFragment(Fragment fragment) {
         getFragmentManager()
                 .beginTransaction()
+                .setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right)
                 .replace(R.id.fragment_container, fragment)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit();
     }
 }

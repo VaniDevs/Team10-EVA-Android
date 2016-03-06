@@ -86,14 +86,15 @@ public class HomeActivity extends AppCompatActivity implements OnFragmentChangeL
         mNotificationManager.notify(mId, not);
         // end of notif stuff
 
-        Parse.enableLocalDatastore(this);
 
-        Parse.initialize(new Parse.Configuration.Builder(this)
-                        .applicationId("VanHacks")
-                        .clientKey("spiderman")
-                        .server("http://66.175.210.39:1337/parse/")
-                        .build()
-        );
+//        Parse.enableLocalDatastore(this);
+//
+//        Parse.initialize(new Parse.Configuration.Builder(this)
+//                        .applicationId("VanHacks")
+//                        .clientKey("spiderman")
+//                        .server("http://66.175.210.39:1337/parse/")
+//                        .build()
+//        );
 
         getFragmentManager()
                 .beginTransaction()
